@@ -1,0 +1,166 @@
+{
+  "timestamp": "2026-03-13 13:44:44",
+  "device": "cuda",
+  "num_experts": 5,
+  "experts": [
+    {
+      "name": "best_t9_timm_b4_320",
+      "checkpoint": "E:\\samsung\\Dataset\\runs\\best_t9_timm_b4_320.pt",
+      "model": "timm:tf_efficientnet_b4_ns",
+      "img_size": 320,
+      "tta": true,
+      "val_acc": 0.9431082331174838
+    },
+    {
+      "name": "best_t12_swin_tiny",
+      "checkpoint": "E:\\samsung\\Dataset\\runs\\best_t12_swin_tiny.pt",
+      "model": "timm:swin_tiny_patch4_window7_224",
+      "img_size": 224,
+      "tta": true,
+      "val_acc": 0.9310823311748381
+    },
+    {
+      "name": "best_t5_effb3",
+      "checkpoint": "E:\\samsung\\Dataset\\runs\\best_t5_effb3.pt",
+      "model": "efficientnet_b3",
+      "img_size": 300,
+      "tta": false,
+      "val_acc": 0.9329324699352451
+    },
+    {
+      "name": "best_t11_convnext_small",
+      "checkpoint": "E:\\samsung\\Dataset\\runs\\best_t11_convnext_small.pt",
+      "model": "timm:convnext_small",
+      "img_size": 224,
+      "tta": true,
+      "val_acc": 0.9380203515263644
+    },
+    {
+      "name": "best_t4_effb0",
+      "checkpoint": "E:\\samsung\\Dataset\\runs\\best_t4_effb0.pt",
+      "model": "efficientnet_b0",
+      "img_size": 224,
+      "tta": false,
+      "val_acc": 0.9347826086956522
+    }
+  ],
+  "oracle_selected_experts": 0.9615384340286255,
+  "best_no_filename": {
+    "name": "uniform_avg",
+    "type": "ensemble",
+    "model": "best_t9_timm_b4_320+best_t12_swin_tiny+best_t5_effb3+best_t11_convnext_small+best_t4_effb0",
+    "val_acc_ckpt": null,
+    "train_acc": 0.9997701048851013,
+    "test_acc": 0.9176923036575317,
+    "filename_required": false,
+    "val_acc_meta": 0.9500462412834167
+  },
+  "results": [
+    {
+      "name": "uniform_avg",
+      "type": "ensemble",
+      "model": "best_t9_timm_b4_320+best_t12_swin_tiny+best_t5_effb3+best_t11_convnext_small+best_t4_effb0",
+      "val_acc_ckpt": null,
+      "train_acc": 0.9997701048851013,
+      "test_acc": 0.9176923036575317,
+      "filename_required": false,
+      "val_acc_meta": 0.9500462412834167
+    },
+    {
+      "name": "scalar_weighted_avg",
+      "type": "ensemble",
+      "model": "best_t9_timm_b4_320+best_t12_swin_tiny+best_t5_effb3+best_t11_convnext_small+best_t4_effb0",
+      "val_acc_ckpt": null,
+      "train_acc": 0.9997701048851013,
+      "test_acc": 0.9146153926849365,
+      "filename_required": false,
+      "val_acc_meta": 0.9505087733268738,
+      "weights": [
+        0.15939244627952576,
+        0.15942302346229553,
+        0.2608797550201416,
+        0.15944254398345947,
+        0.26086220145225525
+      ]
+    },
+    {
+      "name": "mm_teacher",
+      "type": "multimodal",
+      "model": "gate(image_features+tokens)->weighted_experts",
+      "val_acc_ckpt": null,
+      "train_acc": 1.0,
+      "test_acc": 0.9053846001625061,
+      "filename_required": true,
+      "val_acc_meta": 0.9449583888053894,
+      "best_epoch": 2
+    },
+    {
+      "name": "best_t9_timm_b4_320",
+      "type": "expert",
+      "model": "timm:tf_efficientnet_b4_ns",
+      "val_acc_ckpt": 0.9431082331174838,
+      "train_acc": 0.9869257211685181,
+      "test_acc": 0.9046154022216797,
+      "filename_required": false
+    },
+    {
+      "name": "img_gate_distill",
+      "type": "meta_distill",
+      "model": "image-only gate distilled from multimodal teacher",
+      "val_acc_ckpt": null,
+      "train_acc": 1.0,
+      "test_acc": 0.9046154022216797,
+      "filename_required": false,
+      "val_acc_meta": 0.9449583888053894,
+      "best_epoch": 21
+    },
+    {
+      "name": "img_gate",
+      "type": "meta",
+      "model": "gate(image_features)->weighted_experts",
+      "val_acc_ckpt": null,
+      "train_acc": 1.0,
+      "test_acc": 0.9030769467353821,
+      "filename_required": false,
+      "val_acc_meta": 0.9449583888053894,
+      "best_epoch": 2
+    },
+    {
+      "name": "best_t12_swin_tiny",
+      "type": "expert",
+      "model": "timm:swin_tiny_patch4_window7_224",
+      "val_acc_ckpt": 0.9310823311748381,
+      "train_acc": 0.9852684140205383,
+      "test_acc": 0.8999999761581421,
+      "filename_required": false
+    },
+    {
+      "name": "best_t5_effb3",
+      "type": "expert",
+      "model": "efficientnet_b3",
+      "val_acc_ckpt": 0.9329324699352451,
+      "train_acc": 0.9865574240684509,
+      "test_acc": 0.8999999761581421,
+      "filename_required": false
+    },
+    {
+      "name": "best_t11_convnext_small",
+      "type": "expert",
+      "model": "timm:convnext_small",
+      "val_acc_ckpt": 0.9380203515263644,
+      "train_acc": 0.9866494536399841,
+      "test_acc": 0.8969230651855469,
+      "filename_required": false
+    },
+    {
+      "name": "best_t4_effb0",
+      "type": "expert",
+      "model": "efficientnet_b0",
+      "val_acc_ckpt": 0.9347826086956522,
+      "train_acc": 0.9866494536399841,
+      "test_acc": 0.8884615302085876,
+      "filename_required": false
+    }
+  ],
+  "assumption": "Test filename unavailable for deployment. filename_required=True methods are reference only."
+}

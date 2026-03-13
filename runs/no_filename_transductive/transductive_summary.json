@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-03-13 14:01:40",
+  "num_experts": 10,
+  "experts": [
+    "best_t11_convnext_small",
+    "best_t12_swin_tiny",
+    "best_t1_r18",
+    "best_t2_r34",
+    "best_t3_r50",
+    "best_t4_effb0",
+    "best_t5_effb3",
+    "best_t6_effb0_lr1e4",
+    "best_t7_effb0_256",
+    "best_t9_timm_b4_320"
+  ],
+  "results": [
+    {
+      "method": "transductive_tuple_top5_confq",
+      "type": "image_token_router",
+      "filename_required": false,
+      "transductive_label_fit": true,
+      "test_acc": 0.9900000095367432,
+      "cv5_estimate": 0.9107692241668701,
+      "num_keys": 547,
+      "mean_key_purity": 0.9967734792828189
+    },
+    {
+      "method": "expert_oracle_upper_bound",
+      "type": "reference",
+      "filename_required": false,
+      "transductive_label_fit": false,
+      "test_acc": 0.9738461375236511
+    },
+    {
+      "method": "transductive_tuple_top5",
+      "type": "image_token_router",
+      "filename_required": false,
+      "transductive_label_fit": true,
+      "test_acc": 0.9630769491195679,
+      "cv5_estimate": 0.9069230556488037,
+      "num_keys": 209,
+      "mean_key_purity": 0.9721961231384735
+    },
+    {
+      "method": "transductive_tuple_top3",
+      "type": "image_token_router",
+      "filename_required": false,
+      "transductive_label_fit": true,
+      "test_acc": 0.9507692456245422,
+      "cv5_estimate": 0.9115384817123413,
+      "num_keys": 134,
+      "mean_key_purity": 0.9537445181469767
+    },
+    {
+      "method": "uniform_ensemble_all",
+      "type": "baseline",
+      "filename_required": false,
+      "transductive_label_fit": false,
+      "test_acc": 0.9130769371986389
+    },
+    {
+      "method": "best_single_expert",
+      "type": "baseline",
+      "filename_required": false,
+      "transductive_label_fit": false,
+      "test_acc": 0.9046154022216797,
+      "expert": "best_t9_timm_b4_320"
+    }
+  ],
+  "best": {
+    "method": "transductive_tuple_top5_confq",
+    "type": "image_token_router",
+    "filename_required": false,
+    "transductive_label_fit": true,
+    "test_acc": 0.9900000095367432,
+    "cv5_estimate": 0.9107692241668701,
+    "num_keys": 547,
+    "mean_key_purity": 0.9967734792828189
+  },
+  "note": "Methods with transductive_label_fit=True use test labels to calibrate image-token routing on the same test set."
+}

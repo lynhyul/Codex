@@ -1,0 +1,7 @@
+{
+  "best_epoch": 8,
+  "best_val_acc": 0.9500462534690102,
+  "best_test_acc": 0.9153846153846154,
+  "checkpoint": "E:\\samsung\\Dataset\\runs\\multimodal_desc_run2_auto_desc\\checkpoints\\best_multimodal.pt",
+  "report": "E:\\samsung\\Dataset\\runs\\multimodal_desc_run2_auto_desc\\performance_report.md"
+}
